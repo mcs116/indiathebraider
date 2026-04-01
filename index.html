@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India the Braider LLC — Expert Braiding Services</title>
+<meta name="description" content="Professional braiding services tailored to your unique style. Box braids, cornrows, knotless braids, twists, locs, and kids braiding. Book a consultation today.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23E8839B'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-family='serif' font-weight='bold'%3EI%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #E8839B;
+    --pink-light: #F4B8C8;
+    --pink-soft: #FADDE5;
+    --pink-pale: #FDF0F3;
+    --pink-deep: #D4607A;
+    --pink-block: #F2B0BF;
+    --dark: #2E1A20;
+    --dark-warm: #3D252D;
+    --cream: #FFFAF8;
+    --cream-soft: #FFF5F0;
+    --text: #3A2830;
+    --text-light: #8A707A;
+    --white: #FFFFFF;
+    --shadow: 0 4px 24px rgba(46,26,32,0.07);
+    --shadow-lg: 0 12px 48px rgba(46,26,32,0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Raleway', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(46,26,32,0.95);
+    backdrop-filter: blur(12px);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(232,131,155,0.25);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo-img { height: 40px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: var(--pink-soft); text-decoration: none;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 1.2px;
+    text-transform: uppercase; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--pink); }
+  .mobile-menu-btn {
+    display: none; background: none; border: none; cursor: pointer;
+    padding: 8px; color: var(--pink-soft);
+  }
+  .mobile-menu-btn svg { width: 24px; height: 24px; }
+  .hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(160deg, var(--dark) 0%, var(--dark-warm) 40%, #4D2F3A 100%);
+    position: relative; overflow: hidden; padding: 120px 24px 80px;
+    text-align: center;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(232,131,155,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(244,184,200,0.1) 0%, transparent 50%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 700px; }
+  .hero-logo { max-width: 380px; width: 80%; margin-bottom: 32px; }
+  .hero-badge {
+    display: inline-block; padding: 8px 20px; border: 1px solid var(--pink);
+    border-radius: 30px; color: var(--pink); font-size: 0.75rem;
+    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 28px;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+    color: var(--cream); font-weight: 700;
+    line-height: 1.15; margin-bottom: 24px;
+  }
+  .hero h1 span { color: var(--pink); }
+  .hero p {
+    color: var(--pink-soft); font-size: 1.1rem;
+    max-width: 520px; margin: 0 auto 40px; opacity: 0.9;
+    font-weight: 300; line-height: 1.8;
+  }
+  .hero-cta {
+    display: inline-block; padding: 16px 40px;
+    background: var(--pink); color: var(--white);
+    text-decoration: none; font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 2px;
+    text-transform: uppercase; border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(232,131,155,0.35);
+  }
+  .hero-cta:hover { background: var(--pink-deep); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(232,131,155,0.45); }
+  section { padding: 100px 24px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--pink); font-weight: 600; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--dark); font-weight: 700;
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  .section-subtitle {
+    font-size: 1.05rem; color: var(--text-light);
+    max-width: 560px; font-weight: 300; line-height: 1.8;
+    margin-bottom: 48px;
+  }
+  .about { background: var(--white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 64px; align-items: center;
+  }
+  .about-visual {
+    height: 420px; border-radius: 16px;
+    background: linear-gradient(135deg, var(--pink-soft) 0%, var(--pink-pale) 100%);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .about-visual .logo-watermark {
+    max-width: 65%; max-height: 65%; object-fit: contain; opacity: 0.5;
+  }
+  .about-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; margin-bottom: 20px; color: var(--dark);
+  }
+  .about-text p {
+    color: var(--text-light); margin-bottom: 16px;
+    font-weight: 300; line-height: 1.8;
+  }
+  .services { background: var(--cream); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .service-card {
+    background: var(--white); padding: 36px 28px;
+    border-radius: 16px; box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: linear-gradient(90deg, var(--pink), var(--pink-light));
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--pink-pale); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 1.2rem; margin-bottom: 20px; color: var(--pink-deep);
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; margin-bottom: 10px; color: var(--dark);
+  }
+  .service-card p {
+    color: var(--text-light); font-size: 0.9rem;
+    font-weight: 300; line-height: 1.7;
+  }
+  .gallery {
+    background: linear-gradient(160deg, var(--dark) 0%, var(--dark-warm) 100%);
+    color: var(--cream);
+  }
+  .gallery .section-title { color: var(--cream); }
+  .gallery .section-subtitle { color: rgba(255,250,248,0.55); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .gallery-item {
+    aspect-ratio: 1; border-radius: 12px;
+    background: linear-gradient(135deg, rgba(232,131,155,0.15), rgba(244,184,200,0.08));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; color: rgba(232,131,155,0.25);
+    transition: transform 0.3s; border: 1px solid rgba(232,131,155,0.1);
+  }
+  .gallery-item:hover { transform: scale(1.03); }
+  .testimonials { background: var(--pink-pale); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .testimonial-card {
+    background: var(--white); padding: 36px;
+    border-radius: 16px; box-shadow: var(--shadow);
+    border-left: 4px solid var(--pink);
+  }
+  .testimonial-card .quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--text);
+    font-style: italic; margin-bottom: 20px; line-height: 1.7;
+  }
+  .testimonial-card .author {
+    font-size: 0.82rem; font-weight: 600;
+    color: var(--pink-deep); letter-spacing: 1px; text-transform: uppercase;
+  }
+  .contact { background: var(--white); padding: 100px 24px; }
+  .contact-wrapper { max-width: 640px; margin: 0 auto; text-align: center; }
+  .contact-form {
+    background: var(--cream); padding: 48px 40px;
+    border-radius: 20px; box-shadow: var(--shadow);
+    margin-top: 40px; text-align: left;
+  }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block; font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text); margin-bottom: 7px;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group textarea {
+    width: 100%; padding: 14px 16px;
+    border: 1px solid #E8D8DE; border-radius: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.95rem; background: var(--white);
+    transition: border-color 0.3s, box-shadow 0.3s; outline: none;
+    color: var(--text);
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(232,131,155,0.12);
+  }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .consent-section {
+    margin: 28px 0 8px; padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--pink-soft); border-radius: 14px;
+  }
+  .consent-section-title {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--pink-deep); margin-bottom: 16px;
+  }
+  .consent-checkbox {
+    display: flex; gap: 12px; align-items: flex-start;
+    margin-bottom: 16px; cursor: pointer;
+  }
+  .consent-checkbox:last-of-type { margin-bottom: 0; }
+  .consent-checkbox input[type="checkbox"] {
+    margin-top: 4px; width: 18px; height: 18px;
+    accent-color: var(--pink); flex-shrink: 0; cursor: pointer;
+  }
+  .consent-checkbox .consent-text {
+    font-size: 0.8rem; color: var(--text); line-height: 1.65; font-weight: 400;
+  }
+  .consent-checkbox .consent-text a { color: var(--pink-deep); text-decoration: underline; }
+  .consent-checkbox .consent-text strong { color: var(--dark); }
+  .consent-note {
+    font-size: 0.73rem; color: var(--text-light);
+    margin-top: 14px; line-height: 1.6; font-style: italic;
+  }
+  .form-submit {
+    width: 100%; padding: 16px;
+    background: var(--pink); color: var(--white);
+    border: none; border-radius: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s; margin-top: 24px;
+    box-shadow: 0 4px 16px rgba(232,131,155,0.3);
+  }
+  .form-submit:hover { background: var(--pink-deep); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-success {
+    display: none; text-align: center; padding: 40px 20px;
+  }
+  .form-success.show { display: block; }
+  .form-success h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: var(--dark); margin-bottom: 12px;
+  }
+  .form-success p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
+  .form-success .checkmark {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--pink); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; margin: 0 auto 20px;
+  }
+  footer {
+    background: var(--dark); color: var(--pink-soft);
+    padding: 60px 24px 32px; text-align: center;
+  }
+  .footer-logo { margin-bottom: 24px; }
+  .footer-logo img { height: 48px; }
+  .footer-links {
+    display: flex; justify-content: center; gap: 32px;
+    margin-bottom: 32px; list-style: none; flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: var(--pink-soft); text-decoration: none;
+    font-size: 0.82rem; letter-spacing: 1px; transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--pink); }
+  .footer-copy {
+    font-size: 0.75rem; color: rgba(250,221,229,0.35);
+    border-top: 1px solid rgba(250,221,229,0.1);
+    padding-top: 24px; margin-top: 8px;
+  }
+  .legal-page {
+    display: none; padding: 120px 24px 80px;
+    background: var(--cream); min-height: 100vh;
+  }
+  .legal-page.active { display: block; }
+  .legal-content {
+    max-width: 760px; margin: 0 auto;
+    background: var(--white); padding: 56px 48px;
+    border-radius: 20px; box-shadow: var(--shadow);
+  }
+  .legal-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; color: var(--dark); margin-bottom: 8px;
+  }
+  .legal-content .legal-date {
+    font-size: 0.8rem; color: var(--text-light);
+    margin-bottom: 32px; font-weight: 500;
+  }
+  .legal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; color: var(--dark); margin: 32px 0 12px;
+  }
+  .legal-content p, .legal-content ul {
+    font-size: 0.92rem; color: var(--text-light);
+    line-height: 1.8; margin-bottom: 16px;
+  }
+  .legal-content ul { padding-left: 24px; }
+  .legal-content li { margin-bottom: 8px; }
+  .legal-back {
+    display: inline-block; margin-bottom: 32px;
+    color: var(--pink-deep); text-decoration: none;
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 1px;
+  }
+  .legal-back:hover { text-decoration: underline; }
+  @media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(46,26,32,0.98); padding: 20px 24px; gap: 16px; }
+    .nav-links.open { display: flex; }
+    .mobile-menu-btn { display: block; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-form { padding: 32px 24px; }
+    .legal-content { padding: 40px 28px; }
+    .hero-logo { max-width: 260px; }
+  }
+</style>
+</head>
+<body>
+<div id="main-site">
+  <nav>
+    <div class="nav-inner">
+      <img alt="India the Braider LLC" class="nav-logo-img" src="data:image/jpeg;base64,/9j/4QDKRXhpZgAATU0AKgAAAAgABgESAAMAAAABAAEAAAEaAAUAAAABAAAAVgEbAAUAAAABAAAAXgEoAAMAAAABAAIAAAITAAMAAAABAAEAAIdpAAQAAAABAAAAZgAAAAAAAABIAAAAAQAAAEgAAAABAAeQAAAHAAAABDAyMjGRAQAHAAAABAECAwCgAAAHAAAABDAxMDCgAQADAAAAAQABAACgAgAEAAAAAQAABf6gAwAEAAAAAQAAA3OkBgADAAAAAQAAAAAAAAAAAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYYXBwbAQAAABtbnRyUkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAABLAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFlaAAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBnVFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBzAHAAbABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMAbwBwAHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAwADIAMlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbv/bAIQAAQEBAQEBAgEBAgMCAgIDBAMDAwMEBQQEBAQEBQYFBQUFBQUGBgYGBgYGBgcHBwcHBwgICAgICQkJCQkJCQkJCQEBAQECAgIEAgIECQYFBgkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJ/90ABABg/8AAEQgDcwX+AwEiAAIRAQMRAf/EAaIAAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKCxAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6AQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgsRAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/v4ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/0P7+KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9k=" />
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+        <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
+        <li><a href="#testimonials" onclick="closeMobileMenu()">Reviews</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+        <li><a href="#" onclick="showPage('privacy'); closeMobileMenu(); return false;">Privacy</a></li>
+        <li><a href="#" onclick="showPage('terms'); closeMobileMenu(); return false;">Terms</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Expert Braiding Services</div>
+      <h1>Beautiful Braids,<br><span>Crafted with Care</span></h1>
+      <p>Professional braiding services tailored to your unique style. From classic cornrows to intricate protective styles — your hair journey starts here.</p>
+      <a href="#contact" class="hero-cta">Book a Consultation</a>
+    </div>
+  </section>
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div style="font-family:'Playfair Display',serif;font-size:3rem;color:var(--pink);opacity:0.4;font-weight:700;">ITB</div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">About Us</div>
+          <h3>Passionate About Protective Styling</h3>
+          <p>India the Braider LLC is dedicated to providing exceptional braiding services that protect and celebrate the natural beauty of your hair. With years of experience and a deep understanding of hair health, we create styles that look amazing and keep your hair thriving.</p>
+          <p>Every client receives personalized attention and expert care. We believe that great hair starts with a great foundation — healthy practices, quality products, and skilled technique.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label">What We Offer</div>
+      <div class="section-title">Our Services</div>
+      <div class="section-subtitle">Expert braiding and protective styling for every occasion and hair type.</div>
+      <div class="services-grid">
+        <div class="service-card"><div class="service-icon">✦</div><h3>Box Braids</h3><p>Classic and versatile box braids in various sizes and lengths. Perfect for a low-maintenance protective style that lasts.</p></div>
+        <div class="service-card"><div class="service-icon">✦</div><h3>Cornrows</h3><p>Traditional and creative cornrow designs, from simple straight-backs to intricate custom patterns tailored to your preference.</p></div>
+        <div class="service-card"><div class="service-icon">✦</div><h3>Knotless Braids</h3><p>Gentle, tension-free knotless braids for a natural look and comfortable wear. Ideal for protecting edges and promoting growth.</p></div>
+        <div class="service-card"><div class="service-icon">✦</div><h3>Twist Styles</h3><p>Beautiful Senegalese twists, passion twists, and spring twists to suit your style and lifestyle.</p></div>
+        <div class="service-card"><div class="service-icon">✦</div><h3>Locs &amp; Faux Locs</h3><p>Starter locs, loc maintenance, and stunning faux loc installations for a bold, statement-making look.</p></div>
+        <div class="service-card"><div class="service-icon">✦</div><h3>Kids Braiding</h3><p>Gentle, age-appropriate braiding styles for children with patience and care. Keeping little ones looking their best.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-label">Our Work</div>
+      <div class="section-title">Style Gallery</div>
+      <div class="section-subtitle">A showcase of our braiding artistry and the beautiful styles we create for our clients.</div>
+      <div class="gallery-grid">
+        <div class="gallery-item">✦</div><div class="gallery-item">✦</div><div class="gallery-item">✦</div><div class="gallery-item">✦</div>
+        <div class="gallery-item">✦</div><div class="gallery-item">✦</div><div class="gallery-item">✦</div><div class="gallery-item">✦</div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">Client Love</div>
+      <div class="section-title">What Our Clients Say</div>
+      <div class="section-subtitle">Real experiences from the people who trust us with their hair.</div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div class="quote">"India did an amazing job on my knotless braids. They were neat, lasted for weeks, and my edges stayed healthy. I won't go anywhere else!"</div><div class="author">— Jasmine T.</div></div>
+        <div class="testimonial-card"><div class="quote">"The best braiding experience I've ever had. So professional, so talented, and the environment is warm and welcoming. Highly recommend!"</div><div class="author">— Keisha M.</div></div>
+        <div class="testimonial-card"><div class="quote">"I brought my daughter for her first cornrows and India was so patient and gentle. My baby loved her braids! We'll be back every month."</div><div class="author">— Tamara L.</div></div>
+        <div class="testimonial-card"><div class="quote">"Finally found someone who understands my hair. The passion twists were absolutely gorgeous and the install was comfortable the entire time."</div><div class="author">— Desiree W.</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <div class="contact-wrapper">
+      <div class="section-label">Get in Touch</div>
+      <div class="section-title">Contact Us</div>
+      <div class="section-subtitle" style="margin: 0 auto 0;">Have a question or ready to book? Reach out and we'll get back to you shortly.</div>
+      <div class="contact-form" id="contactForm">
+        <form id="theForm" onsubmit="return handleSubmit(event)">
+          <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" name="firstName" placeholder="Your first name" required /></div>
+          <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName" placeholder="Your last name" /></div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required /></div>
+          <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required /></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you're looking for..."></textarea></div>
+          <div class="consent-section">
+            <div class="consent-section-title">SMS Communication Preferences</div>
+            <label class="consent-checkbox">
+              <input type="checkbox" id="consent-transactional" name="consentTransactional" />
+              <span class="consent-text">I agree to receive <strong>transactional SMS messages</strong> from <strong>India the Braider LLC</strong>, including appointment confirmations, service updates, and inquiry responses. Message frequency may vary, up to 4 messages per month. Msg &amp; data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. View our <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a> and <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a>.</span>
+            </label>
+            <label class="consent-checkbox">
+              <input type="checkbox" id="consent-promotional" name="consentPromotional" />
+              <span class="consent-text">I agree to receive <strong>promotional SMS messages</strong> from <strong>India the Braider LLC</strong>, including new braid styles, hair care tips, special offers, and seasonal hair trends. Message frequency may vary, up to 4 messages per month. Msg &amp; data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. View our <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a> and <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a>.</span>
+            </label>
+            <div class="consent-note">Consent is optional and not required to use our services or to submit this form. Checkboxes are not pre-checked. You may opt out at any time by replying STOP.</div>
+          </div>
+          <button class="form-submit" type="submit" id="submitBtn">Send Message</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="checkmark">✓</div>
+          <h3>Message Sent!</h3>
+          <p>Thank you for reaching out. We'll get back to you shortly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-logo"><div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--pink-soft);font-weight:700;letter-spacing:2px;">INDIA THE BRAIDER</div></div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a></li>
+      <li><a href="#" onclick="showPage('terms'); return false;">Terms of Service</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2025 India the Braider LLC. All rights reserved.</div>
+  </footer>
+</div>
+<div class="legal-page" id="privacy-page">
+  <div class="legal-content">
+    <a href="#" class="legal-back" onclick="showPage('main'); return false;">← Back to Home</a>
+    <h1>Privacy Policy</h1>
+    <div class="legal-date">Effective Date: January 1, 2025</div>
+    <h2>1. Information We Collect</h2>
+    <p>India the Braider LLC ("we," "us," or "our") collects the following information when you use our website or services:</p>
+    <ul><li>Personal information: name, email address, phone number</li><li>Communications you send to us via our contact form</li><li>SMS messaging preferences and consent records</li><li>Usage data and website analytics</li></ul>
+    <h2>2. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul><li>Respond to your inquiries and service requests</li><li>Send transactional SMS messages (appointment confirmations, service updates, inquiry responses) if you have opted in</li><li>Send promotional SMS messages (new styles, offers, hair care tips) if you have separately opted in</li><li>Improve our services and website experience</li><li>Comply with legal obligations</li></ul>
+    <h2>3. SMS Messaging</h2>
+    <p>When you provide your phone number and opt in to receive SMS messages from India the Braider LLC, the following applies:</p>
+    <ul><li><strong>Message types:</strong> Transactional messages (service updates, appointment confirmations, inquiry responses) and/or promotional messages (offers, new styles, hair care tips), depending on your selected preferences.</li><li><strong>Message frequency:</strong> Message frequency may vary, up to 4 messages per month.</li><li><strong>Opt-out:</strong> Reply STOP to any message to unsubscribe at any time.</li><li><strong>Help:</strong> Reply HELP for assistance.</li><li><strong>Costs:</strong> Message and data rates may apply. Contact your wireless carrier for details.</li><li><strong>Consent:</strong> Consent to receive SMS messages is optional and not required to use our services.</li></ul>
+    <h2>4. Information Sharing</h2>
+    <p>We do not sell, trade, or rent your personal information to third parties. We may share your information with trusted service providers who assist us in operating our business, provided they agree to keep your information confidential.</p>
+    <h2>5. Data Security</h2>
+    <p>We implement reasonable security measures to protect your personal information from unauthorized access, disclosure, or misuse.</p>
+    <h2>6. Your Rights</h2>
+    <p>You have the right to request access to, correction of, or deletion of your personal information. You may opt out of SMS communications at any time by replying STOP.</p>
+    <h2>7. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy periodically. Changes will be posted on this page with an updated effective date.</p>
+    <h2>8. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, please contact India the Braider LLC through our website contact form.</p>
+  </div>
+</div>
+<div class="legal-page" id="terms-page">
+  <div class="legal-content">
+    <a href="#" class="legal-back" onclick="showPage('main'); return false;">← Back to Home</a>
+    <h1>Terms of Service</h1>
+    <div class="legal-date">Effective Date: January 1, 2025</div>
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing and using the website and services of India the Braider LLC ("we," "us," or "our"), you agree to be bound by these Terms of Service. If you do not agree, please do not use our website or services.</p>
+    <h2>2. Services</h2>
+    <p>India the Braider LLC provides professional braiding and hair styling services. Service availability, pricing, and scheduling are subject to change without notice.</p>
+    <h2>3. SMS Communications</h2>
+    <p>By opting in to receive SMS messages from India the Braider LLC, you agree to the following:</p>
+    <ul><li>You may receive transactional messages (appointment confirmations, service updates, inquiry responses) and/or promotional messages (special offers, new braid styles, hair care tips), depending on your consent selections.</li><li>Message frequency may vary, up to 4 messages per month.</li><li>Message and data rates may apply.</li><li>You may opt out at any time by replying STOP to any message.</li><li>Reply HELP for help or contact us through our website.</li><li>Consent to receive SMS is optional and not a condition of purchasing any goods or services.</li></ul>
+    <h2>4. User Responsibilities</h2>
+    <p>You agree to provide accurate information when using our contact form and to use our website and services for lawful purposes only.</p>
+    <h2>5. Intellectual Property</h2>
+    <p>All content on this website, including text, images, logos, and design, is the property of India the Braider LLC and is protected by applicable intellectual property laws.</p>
+    <h2>6. Limitation of Liability</h2>
+    <p>India the Braider LLC shall not be liable for any indirect, incidental, or consequential damages arising from the use of our website or services.</p>
+    <h2>7. Modifications</h2>
+    <p>We reserve the right to update these Terms of Service at any time. Continued use of our website after changes constitutes acceptance of the updated terms.</p>
+    <h2>8. Governing Law</h2>
+    <p>These Terms of Service are governed by the laws of the state in which India the Braider LLC operates.</p>
+    <h2>9. Contact</h2>
+    <p>For questions about these Terms, please contact India the Braider LLC through our website contact form.</p>
+  </div>
+</div>
+<script>
+  function showPage(page) {
+    document.getElementById('main-site').style.display = page === 'main' ? 'block' : 'none';
+    document.getElementById('privacy-page').className = page === 'privacy' ? 'legal-page active' : 'legal-page';
+    document.getElementById('terms-page').className = page === 'terms' ? 'legal-page active' : 'legal-page';
+    window.scrollTo(0, 0);
+  }
+  function toggleMobileMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function closeMobileMenu() {
+    document.getElementById('navLinks').classList.remove('open');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    // Simulate send (replace with real backend endpoint)
+    setTimeout(function() {
+      document.getElementById('theForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }, 1200);
+    return false;
+  }
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
