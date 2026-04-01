@@ -282,6 +282,45 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 1.6rem; margin: 0 auto 20px;
   }
+  .optin-banner {
+    padding: 32px 24px; text-align: center;
+    border-top: 1px solid rgba(232,131,155,0.15);
+    border-bottom: 1px solid rgba(232,131,155,0.15);
+  }
+  .optin-banner.dark {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-warm) 100%);
+  }
+  .optin-banner.light {
+    background: var(--pink-pale);
+  }
+  .optin-banner p {
+    font-size: 0.95rem; margin-bottom: 16px; line-height: 1.6;
+  }
+  .optin-banner.dark p { color: var(--pink-soft); }
+  .optin-banner.light p { color: var(--text); }
+  .optin-banner .optin-cta {
+    display: inline-block; padding: 12px 32px;
+    border-radius: 50px; font-weight: 700;
+    font-size: 0.82rem; letter-spacing: 1.5px;
+    text-transform: uppercase; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .optin-banner.dark .optin-cta {
+    background: var(--pink); color: var(--white);
+    box-shadow: 0 4px 16px rgba(232,131,155,0.35);
+  }
+  .optin-banner.dark .optin-cta:hover { background: var(--pink-deep); }
+  .optin-banner.light .optin-cta {
+    background: var(--dark); color: var(--cream);
+    box-shadow: 0 4px 16px rgba(46,26,32,0.15);
+  }
+  .optin-banner.light .optin-cta:hover { background: var(--dark-warm); }
+  .optin-banner .optin-sub {
+    display: block; font-size: 0.72rem; margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+  .optin-banner.dark .optin-sub { color: rgba(250,221,229,0.5); }
+  .optin-banner.light .optin-sub { color: var(--text-light); }
   .sms-disclosure {
     background: var(--cream-soft); border-top: 1px solid var(--pink-soft);
     padding: 48px 24px; text-align: center;
@@ -443,6 +482,11 @@
       </div>
     </div>
   </section>
+  <div class="optin-banner light">
+    <p>Stay in the loop — get appointment reminders, style tips &amp; exclusive offers from India the Braider LLC.</p>
+    <a href="#contact" class="optin-cta">Sign Up for Text Updates</a>
+    <span class="optin-sub">Msg frequency varies, up to 4/month. Msg &amp; data rates may apply. Reply STOP to opt out.</span>
+  </div>
   <section class="services" id="services">
     <div class="container">
       <div class="section-label">What We Offer</div>
@@ -458,6 +502,11 @@
       </div>
     </div>
   </section>
+  <div class="optin-banner dark">
+    <p>Want to be the first to know about new braid styles &amp; seasonal specials?</p>
+    <a href="#contact" class="optin-cta">Get SMS Notifications</a>
+    <span class="optin-sub">Opt in for texts from India the Braider LLC. Reply STOP anytime. Msg &amp; data rates may apply.</span>
+  </div>
   <section class="gallery" id="gallery">
     <div class="container">
       <div class="section-label">Our Work</div>
@@ -469,6 +518,11 @@
       </div>
     </div>
   </section>
+  <div class="optin-banner light">
+    <p>Love what you see? Get hair care tips &amp; booking reminders straight to your phone.</p>
+    <a href="#contact" class="optin-cta">Join Our Text List</a>
+    <span class="optin-sub">India the Braider LLC texts up to 4x/month. Msg &amp; data rates may apply. Text STOP to cancel.</span>
+  </div>
   <section class="testimonials" id="testimonials">
     <div class="container">
       <div class="section-label">Client Love</div>
@@ -482,6 +536,11 @@
       </div>
     </div>
   </section>
+  <div class="optin-banner dark">
+    <p>Never miss an appointment — sign up for text reminders &amp; updates from India the Braider LLC.</p>
+    <a href="#contact" class="optin-cta">Opt In for Texts</a>
+    <span class="optin-sub">Consent is optional. Up to 4 msgs/month. Msg &amp; data rates may apply. Reply STOP to unsubscribe.</span>
+  </div>
   <section class="contact" id="contact">
     <div class="contact-wrapper">
       <div class="section-label">Get in Touch</div>
@@ -569,6 +628,9 @@
         </div>
       </div>
       <p style="font-size:0.85rem; color:var(--text-light); margin-top:16px;">We comply with all applicable laws and regulations, including the Telephone Consumer Protection Act (TCPA) and CTIA guidelines.</p>
+      <div style="margin:24px 0;">
+        <a href="#contact" style="display:inline-block;padding:14px 36px;background:var(--pink);color:var(--white);border-radius:50px;font-weight:700;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;box-shadow:0 4px 16px rgba(232,131,155,0.35);transition:all 0.3s;">Sign Up for Text Updates</a>
+      </div>
       <div class="sms-disclosure-links">
         <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a>
         <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a>
