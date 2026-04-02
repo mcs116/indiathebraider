@@ -227,6 +227,101 @@
     box-shadow: 0 0 0 3px rgba(232,131,155,0.12);
   }
   .form-group textarea { min-height: 100px; resize: vertical; }
+  .consent-section {
+    margin: 28px 0 8px; padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--pink-soft); border-radius: 14px;
+  }
+  .consent-section-title {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--pink-deep); margin-bottom: 16px;
+  }
+  .consent-checkbox {
+    display: flex; gap: 12px; align-items: flex-start;
+    margin-bottom: 16px; cursor: pointer;
+  }
+  .consent-checkbox:last-of-type { margin-bottom: 0; }
+  .consent-checkbox input[type="checkbox"] {
+    margin-top: 4px; width: 18px; height: 18px;
+    accent-color: var(--pink); flex-shrink: 0; cursor: pointer;
+  }
+  .consent-checkbox .consent-text {
+    font-size: 0.8rem; color: var(--text); line-height: 1.65; font-weight: 400;
+  }
+  .consent-checkbox .consent-text a { color: var(--pink-deep); text-decoration: underline; }
+  .consent-checkbox .consent-text strong { color: var(--dark); }
+  .consent-note {
+    font-size: 0.73rem; color: var(--text-light);
+    margin-top: 14px; line-height: 1.6; font-style: italic;
+  }
+  .form-submit {
+    width: 100%; padding: 16px;
+    background: var(--pink); color: var(--white);
+    border: none; border-radius: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s; margin-top: 24px;
+    box-shadow: 0 4px 16px rgba(232,131,155,0.3);
+  }
+  .form-submit:hover { background: var(--pink-deep); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-success {
+    display: none; text-align: center; padding: 40px 20px;
+  }
+  .form-success.show { display: block; }
+  .form-success h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: var(--dark); margin-bottom: 12px;
+  }
+  .form-success p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
+  .form-success .checkmark {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--pink); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; margin: 0 auto 20px;
+  }
+  .sms-disclosure {
+    background: var(--cream-soft); border-top: 1px solid var(--pink-soft);
+    padding: 48px 24px; text-align: center;
+  }
+  .sms-disclosure-inner {
+    max-width: 800px; margin: 0 auto;
+  }
+  .sms-disclosure h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem;
+    color: var(--dark); margin-bottom: 20px;
+  }
+  .sms-disclosure-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; text-align: left; margin-bottom: 24px;
+  }
+  @media (max-width: 600px) {
+    .sms-disclosure-grid { grid-template-columns: 1fr; }
+  }
+  .sms-disclosure-item {
+    background: var(--white); border-radius: 10px;
+    padding: 16px 20px; font-size: 0.85rem;
+    color: var(--text); line-height: 1.6;
+    border: 1px solid rgba(232,131,155,0.15);
+  }
+  .sms-disclosure-item strong { color: var(--dark); display: block; margin-bottom: 4px; }
+  .sms-disclosure-links {
+    display: flex; justify-content: center; gap: 24px;
+    flex-wrap: wrap; margin-top: 20px;
+  }
+  .sms-disclosure-links a {
+    display: inline-block; padding: 10px 28px;
+    border: 1.5px solid var(--pink); border-radius: 30px;
+    color: var(--pink-deep); text-decoration: none;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .sms-disclosure-links a:hover {
+    background: var(--pink); color: var(--white);
+  }
   footer {
     background: var(--dark); color: var(--pink-soft);
     padding: 60px 24px 32px; text-align: center;
@@ -406,6 +501,78 @@
           <span style="font-size:0.85rem;color:var(--text);">4581 Valley Parkway, Smyrna, GA 30082</span><br>
           <a href="https://www.google.com/maps/search/?api=1&query=4581%20Valley%20Parkway%2C%20Smyrna%2C%20GA%2030082" target="_blank" rel="noopener" style="color:var(--pink-deep);text-decoration:none;font-size:0.8rem;">Get Directions →</a>
         </div>
+      </div>
+      <div class="contact-form" id="contactForm">
+        <form id="theForm" onsubmit="return handleSubmit(event)">
+          <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" name="firstName" placeholder="Your first name" required /></div>
+          <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName" placeholder="Your last name" /></div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required /></div>
+          <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required /></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you're looking for..."></textarea></div>
+          <div class="consent-section">
+            <div class="consent-section-title">SMS Communication Preferences</div>
+            <label class="consent-checkbox">
+              <input type="checkbox" id="consent-transactional" name="consentTransactional" />
+              <span class="consent-text">I consent to receive <strong>transactional SMS messages and alerts</strong> from <strong>India the Braider LLC</strong>, including appointment confirmations, scheduling reminders, service updates, inquiry responses, and customer support communications. Message frequency may vary, up to 4 messages per month. Message and data rates may apply. To stop receiving messages, reply STOP to any text message. Reply HELP for assistance. <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a> &middot; <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a> &middot; <a href="#" onclick="showPage('sms'); return false;">SMS Terms</a>.</span>
+            </label>
+            <label class="consent-checkbox">
+              <input type="checkbox" id="consent-promotional" name="consentPromotional" />
+              <span class="consent-text">I consent to receive <strong>promotional SMS messages</strong> from <strong>India the Braider LLC</strong> at the phone number provided, including special offers, new braid styles, hair care tips, seasonal hair trends, and business announcements. Message frequency may vary, up to 4 messages per month. Message and data rates may apply. To stop receiving messages, reply STOP to any text message. Reply HELP for assistance. <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a> &middot; <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a> &middot; <a href="#" onclick="showPage('sms'); return false;">SMS Terms</a>.</span>
+            </label>
+            <div class="consent-note">By providing your phone number and checking the boxes above, you consent to receive transactional, promotional, and/or alert SMS messages from <strong>India the Braider LLC</strong>. Message frequency may vary, up to 4 messages per month. Message and data rates may apply. To stop receiving messages, reply STOP to any text message. Reply HELP for assistance or contact us through the <a href="#contact">contact form</a> on our website. Consent is entirely optional and is not a condition of purchasing any goods or services. You must be 18 years of age or older to use this SMS service. Checkboxes are not pre-checked. No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a> &middot; <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a> &middot; <a href="#" onclick="showPage('sms'); return false;">SMS Terms &amp; Conditions</a>.</div>
+          </div>
+          <button class="form-submit" type="submit" id="submitBtn">Send Message</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="checkmark">✓</div>
+          <h3>Message Sent!</h3>
+          <p>Thank you for reaching out. We'll get back to you shortly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sms-disclosure">
+    <div class="sms-disclosure-inner">
+      <h3>SMS Messaging Terms &amp; Disclosures</h3>
+      <div class="sms-disclosure-grid">
+        <div class="sms-disclosure-item">
+          <strong>Program Description</strong>
+          India the Braider LLC sends appointment confirmations, reminders, rescheduling updates, and customer support communications to customers who have explicitly opted in via our web forms.
+        </div>
+        <div class="sms-disclosure-item">
+          <strong>Message Frequency</strong>
+          Message frequency varies based on your service usage and appointment schedule.
+        </div>
+        <div class="sms-disclosure-item">
+          <strong>Cancellation / Opt-Out</strong>
+          You can cancel the SMS service at any time. Text "STOP" to the number that sent you messages. You will receive a confirmation of your unsubscribe status.
+        </div>
+        <div class="sms-disclosure-item">
+          <strong>Support &amp; Contact</strong>
+          Reply "HELP" for assistance, email <a href="mailto:assist@indiathebraiderllc.nebulabrandgroup.com">assist@indiathebraiderllc.nebulabrandgroup.com</a>, or call <a href="tel:+17707101065">(770) 710-1065</a>.
+        </div>
+        <div class="sms-disclosure-item">
+          <strong>Message &amp; Data Rates</strong>
+          Message and data rates may apply for messages sent to you from us and to us from you. Contact your wireless provider for details.
+        </div>
+        <div class="sms-disclosure-item">
+          <strong>Carrier Liability</strong>
+          Carriers are not liable for delayed or undelivered messages.
+        </div>
+        <div class="sms-disclosure-item">
+          <strong>Age Restriction</strong>
+          You must be 18 years or older to participate in our SMS program.
+        </div>
+        <div class="sms-disclosure-item">
+          <strong>Supported Carriers</strong>
+          Works with all major U.S. carriers including AT&amp;T, T-Mobile, Verizon, Sprint, and most regional carriers.
+        </div>
+      </div>
+      <p style="font-size:0.85rem; color:var(--text-light); margin-top:16px;">We comply with all applicable laws and regulations, including the Telephone Consumer Protection Act (TCPA) and CTIA guidelines.</p>
+      <div class="sms-disclosure-links">
+        <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a>
+        <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a>
+        <a href="#" onclick="showPage('sms'); return false;">SMS Terms &amp; Conditions</a>
       </div>
     </div>
   </section>
@@ -700,6 +867,18 @@
   }
   function closeMobileMenu() {
     document.getElementById('navLinks').classList.remove('open');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    // Simulate send (replace with real backend endpoint)
+    setTimeout(function() {
+      document.getElementById('theForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }, 1200);
+    return false;
   }
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function(a) {
